@@ -2,7 +2,8 @@
 
 ## Description:
 
+## How To Use:
 
 ## Team Members:
     - Jason Duong
-    - Nils <LastName>
+    - Nils Heimbach 
