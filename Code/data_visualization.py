@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def insights_of_df(df):
     """Darstellung der Insights eines Dataframes wie Spaltennamen, Anzahl non-null values, Anzahl null values,
