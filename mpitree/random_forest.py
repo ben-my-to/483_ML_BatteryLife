@@ -40,6 +40,10 @@ class RandomForest(DecisionTreeClassifier, DecisionTreeRegressor):
         assert all(isinstance(model, DecisionTreeRegressor) for model in self.forest)
         return mean([dt.predict(x).feature for dt in self.forest])
 
+    def predict_all(self, X):
+        assert all(isinstance(model, DecisionTreeRegressor) for model in self.forest)
+        return [self.predict(X.iloc[x].to_frame().T) for x in range(len(X))]
+
     def score(self, X, y):
         y_hat = [self.predict(X.iloc[x].to_frame().T) for x in range(len(X))]
         return mean_squared_error(y, y_hat, squared=False)
