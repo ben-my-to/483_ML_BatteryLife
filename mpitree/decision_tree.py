@@ -174,6 +174,8 @@ class DecisionTreeRegressor(DecisionTreeEstimator):
 
         if len(y.unique()) == 1:
             return make_node(y.iat[0], True)
+        elif y.empty:
+            return make_node(mean(parent.y), True)
         elif X.empty:
             return make_node(mean(y), True)
         if self.criterion.get("max_depth", float("inf")) <= depth:
